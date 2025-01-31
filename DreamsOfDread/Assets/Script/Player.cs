@@ -48,6 +48,7 @@ public class Plyer : MonoBehaviour
             if(isJump == false)
             {
                 rig.AddForce(new Vector3(0f, jumpForce), ForceMode2D.Impulse);
+                isJump = true;
                 doubleJump = true;
             }
 
@@ -69,6 +70,19 @@ public class Plyer : MonoBehaviour
         if(collision.gameObject.tag == "Over")
         {
             Destroy(gameObject);
+        }
+
+        if(collision.gameObject.tag == "Chao")
+        {
+            isJump = false;
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Chao")
+        {
+            isJump = true;
         }
     }
 }
