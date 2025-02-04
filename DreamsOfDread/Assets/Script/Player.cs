@@ -76,6 +76,12 @@ public class Plyer : MonoBehaviour
         {
             isJump = false;
         }
+
+        if(collision.gameObject.tag == "Vitoria")
+        {
+            Destroy(gameObject);
+            GameController.instance.ShowVitoria();
+        }
     }
 
     public void OnCollisionExit2D(Collision2D collision)
