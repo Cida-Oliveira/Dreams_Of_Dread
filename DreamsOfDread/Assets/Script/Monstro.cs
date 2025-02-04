@@ -19,6 +19,14 @@ public class Monstro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!chegou && destino != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, destino.position, vel * Time.deltaTime);
+
+            if(Vector2.Distance(transform.position, destino.position) < 1f)
+            {
+                chegou = true; //para o personagems
+            }
+        }
     }
 }
