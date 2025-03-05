@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Plyer : MonoBehaviour
 {
     public float Speed;
     public float jumpForce;

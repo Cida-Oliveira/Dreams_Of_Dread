@@ -9,6 +9,12 @@ public class Monstro : MonoBehaviour
 
     public bool chegou = false;
 
+    public AudioSource audioMonster;
+
+    void Awake(){
+        audioMonster = GetComponent<AudioSource>();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +27,7 @@ public class Monstro : MonoBehaviour
     {
         if(!chegou && destino != null)
         {
+            audioMonster.Play();
             transform.position = Vector2.MoveTowards(transform.position, destino.position, vel * Time.deltaTime);
 
             if(Vector2.Distance(transform.position, destino.position) < 1f)
