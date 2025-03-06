@@ -9,19 +9,11 @@ public class Player : MonoBehaviour
 
     public bool isJump;
     public bool doubleJump;
-    public AudioSource audioJump;
-    public AudioSource audioWalking;
-    public AudioSource audioAtack;
 
     private Rigidbody2D rig;
 
     public Animator anim;
 
-    void Awake(){
-        audioJump = GetComponent<AudioSource>();
-        audioWalking = GetComponent<AudioSource>();
-        audioAtack = GetComponent<AudioSource>();
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -46,8 +38,7 @@ public class Player : MonoBehaviour
         transform.position += movimento * Time.deltaTime * Speed;
 
         if(Input.GetAxis("Horizontal") > 0f)
-        {
-            audioWalking.Play();
+        {            
             //eulerAngles serve para a rotação
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             anim.SetBool("andando", true);
@@ -55,7 +46,6 @@ public class Player : MonoBehaviour
 
         if(Input.GetAxis("Horizontal") < 0f)
         {
-            audioWalking.Play();
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
             anim.SetBool("andando", true);
         }
@@ -73,7 +63,6 @@ public class Player : MonoBehaviour
         {
             if(isJump == false)
             {
-                audioJump.Play();
                 rig.AddForce(new Vector3(0f, jumpForce), ForceMode2D.Impulse);
                 isJump = true;
                 doubleJump = true;
@@ -98,13 +87,12 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            audioAtack.Play();
             anim.SetBool("ataque", true);
 
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-        anim.SetBool("ataque", false);
+            anim.SetBool("ataque", false);
         }
         
     }

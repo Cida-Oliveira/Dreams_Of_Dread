@@ -169,7 +169,6 @@ GameObject:
   - component: {fileID: 82516502}
   - component: {fileID: 82516501}
   - component: {fileID: 82516505}
-  - component: {fileID: 82516504}
   m_Layer: 0
   m_Name: Monstro
   m_TagString: Untagged
@@ -280,7 +279,6 @@ MonoBehaviour:
   vel: 2
   destino: {fileID: 61164490}
   chegou: 0
-  audioMonster: {fileID: 0}
 --- !u!50 &82516502
 Rigidbody2D:
   serializedVersion: 4
@@ -323,15 +321,6 @@ MonoBehaviour:
   vel: 0.2
   destino: {fileID: 61164490}
   chegou: 0
-  audioMonster: {fileID: 0}
---- !u!81 &82516504
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82516497}
-  m_Enabled: 1
 --- !u!82 &82516505
 AudioSource:
   m_ObjectHideFlags: 0
