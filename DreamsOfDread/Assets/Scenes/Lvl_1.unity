@@ -279,6 +279,7 @@ MonoBehaviour:
   vel: 2
   destino: {fileID: 61164490}
   chegou: 0
+  audioMonstro: {fileID: 0}
 --- !u!50 &82516502
 Rigidbody2D:
   serializedVersion: 4
@@ -321,6 +322,7 @@ MonoBehaviour:
   vel: 0.2
   destino: {fileID: 61164490}
   chegou: 0
+  audioMonstro: {fileID: 82516505}
 --- !u!82 &82516505
 AudioSource:
   m_ObjectHideFlags: 0
@@ -333,7 +335,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e971592b905898043bc3a56cc4323221, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3152,6 +3154,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &1602789886 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -5688884568207462355, guid: 99c452acd30ae23448f17283470d4883, type: 3}
+  m_PrefabInstance: {fileID: 5824445774839775321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1695369063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,6 +3344,26 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1200744195130627679, guid: 99c452acd30ae23448f17283470d4883, type: 3}
+      propertyPath: _audio.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200744195130627679, guid: 99c452acd30ae23448f17283470d4883, type: 3}
+      propertyPath: _audio.Array.data[0]
+      value: 
+      objectReference: {fileID: 1602789886}
+    - target: {fileID: 1200744195130627679, guid: 99c452acd30ae23448f17283470d4883, type: 3}
+      propertyPath: _audio.Array.data[1]
+      value: 
+      objectReference: {fileID: 1602789884}
+    - target: {fileID: 1200744195130627679, guid: 99c452acd30ae23448f17283470d4883, type: 3}
+      propertyPath: _audio.Array.data[2]
+      value: 
+      objectReference: {fileID: 1602789885}
+    - target: {fileID: 1200744195130627679, guid: 99c452acd30ae23448f17283470d4883, type: 3}
+      propertyPath: _audio.Array.data[3]
+      value: 
+      objectReference: {fileID: 1602789885}
     - target: {fileID: 4607467965931847822, guid: 99c452acd30ae23448f17283470d4883, type: 3}
       propertyPath: m_GravityScale
       value: 3
