@@ -1,2 +1,2 @@
 # DreamsOfDread
-Projeto de Animação - quarta etapa
+Projeto de jogo para disciplina de Multimidia e Animação de jogos digitais 
