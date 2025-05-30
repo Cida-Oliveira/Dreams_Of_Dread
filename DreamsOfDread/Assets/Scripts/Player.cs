@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Plyer : MonoBehaviour
 {
     public float Speed;
     public float jumpForce;
 
     public bool isJump;
     public bool doubleJump;
-
+    
     private Rigidbody2D rig;
 
     public Animator anim;
+
+    public AudioSource[] _audio = new AudioSource[2];
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +39,10 @@ public class Player : MonoBehaviour
         Vector3 movimento = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movimento * Time.deltaTime * Speed;
 
+        _audio[1].Play();
+
         if(Input.GetAxis("Horizontal") > 0f)
-        {            
+        {
             //eulerAngles serve para a rotação
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             anim.SetBool("andando", true);
@@ -53,6 +57,7 @@ public class Player : MonoBehaviour
         if(Input.GetAxis("Horizontal") == 0f)
         {
             anim.SetBool("andando", false);
+            _audio[1].Stop();
         }
 
     }
@@ -61,6 +66,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump"))
         {
+            _audio[0].Play();
             if(isJump == false)
             {
                 rig.AddForce(new Vector3(0f, jumpForce), ForceMode2D.Impulse);
@@ -87,12 +93,14 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
+            _audio[2].Play();
             anim.SetBool("ataque", true);
 
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             anim.SetBool("ataque", false);
+            _audio[2].Stop();
         }
         
     }
